@@ -1,6 +1,6 @@
 import express from "express";
 
-// Legacy 1:1 controllers (pre-pivot). Kept wired until Phase 2 swaps the UI
+// Legacy 1:1 controllers (pre-pivot).
 // over to the community model; the legacy message routes are gone (Message is
 // now channel-scoped + encrypted).
 import { addUser, getUsers } from "../controller/user-controller.js";
@@ -10,7 +10,7 @@ import {
   getConversations,
 } from "../controller/conversation-controller.js";
 
-// Phase 1 community-model controllers + middleware.
+// community-model controllers + middleware.
 import { requireAuth } from "../middleware/auth.js";
 import { requireMembership } from "../middleware/membership.js";
 import { requirePermission, requireAnyPermission } from "../middleware/permission.js";

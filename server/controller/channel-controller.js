@@ -8,7 +8,6 @@ const createSchema = z.object({
 });
 
 // POST /api/communities/:communityId/channels  (requireAuth + requireMembership)
-// NOTE: MANAGE_CHANNELS permission enforcement is layered on in Phase 4.
 export const createChannel = async (request, response) => {
   try {
     const parsed = createSchema.safeParse(request.body);

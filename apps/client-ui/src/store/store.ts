@@ -32,7 +32,7 @@ export const useStore = create<IStore>((set) => ({
   setActiveChannelId: (activeChannelId: string | null) =>
     set({ activeChannelId }),
 
-  // Roles & members of the active community (Phase 4)
+  // Roles & members of the active community
   roles: [],
   setRoles: (roles: IRole[]) => set({ roles }),
   members: [],
@@ -62,7 +62,7 @@ export const useStore = create<IStore>((set) => ({
       messages: state.messages.filter((m) => m._id !== messageId),
     })),
 
-  // Polls (Phase 7)
+  // Polls
   polls: [],
   setPolls: (polls: IPoll[]) => set({ polls }),
   addPoll: (poll: IPoll) =>
@@ -78,7 +78,7 @@ export const useStore = create<IStore>((set) => ({
       polls: state.polls.map((p) => (p._id === poll._id ? poll : p)),
     })),
 
-  // Socket (Phase 3)
+  // Socket
   socket: null,
   setSocket: (socket: any) => set({ socket }),
 

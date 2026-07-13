@@ -2,7 +2,7 @@ import { io, Socket } from "socket.io-client";
 import { getToken } from "./apiClient";
 import { IMessage, IPoll } from "../store/IStore";
 
-// Real-time channel transport (Phase 3). One shared connection per session,
+// Real-time channel transport. One shared connection per session,
 // authenticated with the Flux JWT. The socket server uses rooms keyed by
 // channel; we join/leave as the active channel changes.
 
@@ -100,7 +100,7 @@ export const onMessagePinned = (
   return () => socket?.off("messagePinned", handler);
 };
 
-// --- Polls over the socket (Phase 7) -----------------------------------------
+// --- Polls over the socket -----------------------------------------
 // createPoll/votePoll return true if emitted over a live socket, false when
 // disconnected so callers can fall back to REST. The server broadcasts `newPoll`
 // (to the creator too) and `pollUpdated` to the room.

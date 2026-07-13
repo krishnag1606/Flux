@@ -1,5 +1,5 @@
 // Central REST client for the Flux backend. Attaches the Flux session JWT
-// (from Phase 1's POST /api/auth/google) to every authenticated call.
+// (/api/auth/google) to every authenticated call.
 
 export const API_BASE =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";

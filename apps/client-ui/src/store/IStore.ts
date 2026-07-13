@@ -1,5 +1,3 @@
-// Domain types mirror the Phase 1 backend shapes (server/model/*).
-
 export interface IUser {
   _id: string; // Google sub
   name: string;
@@ -102,7 +100,7 @@ export interface IStore {
   setActiveChannelId: (id: string | null) => void;
 
   // Roles & members of the active community + the caller's effective
-  // permissions (Phase 4 — used to gate UI controls).
+  // permissions
   roles: IRole[];
   setRoles: (roles: IRole[]) => void;
   members: IMember[];
@@ -119,7 +117,7 @@ export interface IStore {
   // Remove a message from the active channel (e.g. deleted) — matched by _id.
   removeMessage: (messageId: string) => void;
 
-  // Polls of the active channel (Phase 7). Interleaved with messages in the
+  // Polls of the active channel. Interleaved with messages in the
   // list by createdAt; updated live via the pollUpdated socket event.
   polls: IPoll[];
   setPolls: (polls: IPoll[]) => void;
@@ -127,7 +125,7 @@ export interface IStore {
   // Replace a poll in place (e.g. a vote changed counts) — matched by _id.
   updatePoll: (poll: IPoll) => void;
 
-  // Socket (wired for real-time in Phase 3)
+  // Socket
   socket: any;
   setSocket: (socket: any) => void;
 
